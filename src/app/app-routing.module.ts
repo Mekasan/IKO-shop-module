@@ -4,6 +4,7 @@ import { Shell } from '@app/shell/shell.service';
 
 const routes: Routes = [
   Shell.childRoutes([{ path: 'about', loadChildren: './about/about.module#AboutModule' }]),
+  Shell.childRoutes([{ path: 'shop', loadChildren: './shop/shop.module#ShopModule' }]),
   // Fallback when no prior route is matched
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
