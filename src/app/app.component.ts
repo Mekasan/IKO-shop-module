@@ -81,7 +81,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private onCordovaReady() {
     log.debug('device ready');
 
-    if (window.cordova) {
+    if (window['cordova']) {
       log.debug('Cordova init');
 
       this.keyboard.hideFormAccessoryBar(true);
