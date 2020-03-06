@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "IKO Flatbill",
+      "description": "Forget baseball, say hello to the kiteboarder cap. Protect your scalp in style and make a statement about your passion for kiteboarding.",
+      "features": ["Fabric : 80/20 Acrylic /Wod", "Profile: High", "Closure : 7-position adjustable snap"],
+      "image": ["/assets/iko-hats.jpeg", "/assets/IKO_mens _tshirt_brown.jpg"],
+      "category": "caps",
+      "price": 29.9,
+      "currency": "USD",
+      "in_stock": true,
+      "sale": "0",
+      "sku": "PF-252",
+      "type": "Printful"
+    },
+    {
+      "id": "2",
+      "title": "Cap-White",
+      "features": ["60% Cotton  - 40% Polyester", "Durable rib neckband"],
+      "description": "Available in military green and brown (2016 collection) and black and indigo (2018 collection)",
+      "image": ["/assets/iko-shirt-indigo_0.jpeg", "/assets/IKO_mens _tshirt_brown.jpg"],
+      "category": "clothing",
+      "price": 29.9,
+      "currency": "USD",
+      "in_stock": true,
+      "sale": "0",
+      "sku": "PF-252",
+      "type": "Printful"
+    },
+    {
+      "id": "3",
+      "title": "IKO Men's Tshirt Brown",
+      "features": ["60% Cotton  - 40% Polyester", "Durable rib neckband"],
+      "description": "Available in turquoise, military green and brown",
+      "image": ["/assets/IKO_mens _tshirt_brown.jpg", "/assets/iko-shirt-indigo_0.jpeg"],
+      "category": "clothing",
+      "price": 29.9,
+      "currency": "USD",
+      "in_stock": true,
+      "sale": "0",
+      "sku": "PF-252",
+      "type": "Printful"
+    },
+    {
+      "id": "4",
+      "title": "Men's Tshirt Black",
+      "features": ["60% Cotton  - 40% Polyester", "Durable rib neckband"],
+      "description": "Available in military green and brown (2016 collection) and turquoise and indigo (2018 collection)",
+      "image": ["/assets/iko-shirt-black.jpeg", "/assets/iko-shirt-indigo_0.jpeg"],
+      "category": "clothing",
+      "price": 29.9,
+      "currency": "USD",
+      "in_stock": true,
+      "sale": "0",
+      "sku": "PF-252",
+      "type": "Printful"
+    }
+  ]
+}
