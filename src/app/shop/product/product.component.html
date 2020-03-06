@@ -1,0 +1,12 @@
+<div class="product card shadow">
+  <a [routerLink]="['/product', product.id]">
+    <div class="product-wrapper">
+      <img src="{{ product.image[0] }}" class="card-img-top product-image" alt="" />
+      <div class="card-body product-body">
+        <h5 class="card-title product-title">{{ product.title }}</h5>
+        <p class="card-text product-price">{{ product.price | currency: product.currency }}</p>
+      </div>
+      <div class="product-hover"></div>
+    </div>
+  </a>
+</div>
