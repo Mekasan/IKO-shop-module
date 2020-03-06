@@ -17,6 +17,7 @@ import { SharedModule } from '@app/shared';
 import { HomeModule } from './home/home.module';
 import { ShopModule } from '@app/shop/shop.module';
 // Feature module
+import { Store } from 'store';
 import { ShellModule } from './shell/shell.module';
 import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
@@ -42,7 +43,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],
-  providers: [Keyboard, StatusBar, SplashScreen],
+  providers: [Store, Keyboard, StatusBar, SplashScreen],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
