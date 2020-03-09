@@ -1,0 +1,132 @@
+<div class="container-lg align-items-end" *ngIf="selected$ | async as product">
+  <h1 class="product-title d-none ds-lg-block d-xl-block d-xl-none d-lg-block">{{ product.title }}</h1>
+  <div class="row">
+    <!-- PRODUCT IMAGE CAROUSEL BEGIN-->
+    <div class="col-lg-4 col-md-12">
+      <div class="carousel-wrapper shadow">
+        <ngb-carousel
+          #carousel
+          [showNavigationArrows]="showNavigationArrows"
+          [showNavigationIndicators]="showNavigationIndicators"
+        >
+          <ng-template ngbSlide *ngFor="let image of product.image">
+            <div class="shadow">
+              <img class="carousel-image" [src]="image" alt="Random slide" />
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </div>
+    <!-- PRODUCT IMAGE CAROUSEL END-->
+    <div class="col-lg-7 col-md-10 col-sm-11 offset-md-1">
+      <div class="product">
+        <h1 class="product-title__mobile d-lg-none">{{ product.title }}</h1>
+        <!--PRODUCT FEATURES BEGIN-->
+        <div class="product-features d-none ds-lg-block d-xl-block d-lg-block">
+          <ul *ngFor="let features of product.features">
+            <li class="product-features__item">{{ features }}</li>
+          </ul>
+        </div>
+        <!--PRODUCT FEATURES END-->
+
+        <!--PRODUCT PRICE MOBILE BEGIN-->
+        <div class="product-price__mobile d-lg-none">
+          {{ product.price | currency: product.currency }}
+        </div>
+        <!--PRODUCT PRICE MOBILE END-->
+
+        <!--PRODUCT DESCRIPTION BEGIN-->
+        <div class="product-description">
+          <!--PRODUCT DESCRIPTION FOR MOBILE BEGIN-->
+          <div class="product-description__mobile d-lg-none ">
+            <a (click)="descCollapsed = !descCollapsed" [attr.aria-expanded]="!descCollapsed" aria-controls="collapse">
+              <span class="product-description__mobile_title">Description</span>
+              <i class="fas fa-chevron-down chevron" *ngIf="!descCollapsed; else chevronLeftDes"></i>
+              <ng-template #chevronLeftDes>
+                <i class="fas fa-chevron-left chevron"></i>
+              </ng-template>
+              <hr class="underline" />
+            </a>
+            <div class="collapse" id="collapse" [ngbCollapse]="descCollapsed">
+              <div class="card card-body">
+                {{ product.description }}
+              </div>
+            </div>
+          </div>
+          <!--PRODUCT DESCRIPTION FOR MOBILE END-->
+
+          <!--PRODUCT DESCRIPTION FOR DESKTOP BEGIN-->
+          <div class="product-description__desktop  d-none ds-lg-block d-xl-block d-lg-block">
+            {{ product.description }}
+          </div>
+          <!--PRODUCT DESCRIPTION FOR DESKTOP END-->
+        </div>
+        <!--PRODUCT DESCRIPTION END-->
+
+        <!--PRODUCT PRICE FOR DESKTOP BEGIN-->
+        <div class="product-price d-none ds-lg-block d-xl-block d-lg-block">
+          {{ product.price | currency: product.currency }}
+        </div>
+        <!--PRODUCT PRICE FOR DESKTOP END-->
+
+        <!--PRODUCT BOOKING FORM BEGIN-->
+        <div class="product-attribute">
+          <!--PRODUCT BOOKING FORM DESKTOP BEGIN-->
+          <div class="product-attribute__desktop d-none ds-lg-block d-xl-block d-lg-block">
+            <app-product-form
+              [submitForm]="addProduct.asObservable()"
+              [product]="selected$ | async"
+              [postfix]="'desktop'"
+              [sizes]="sizes"
+              [colors]="colors"
+              (addToCart)="addToCart($event)"
+            >
+            </app-product-form>
+          </div>
+          <!--PRODUCT BOOKING FORM DESKTOP END-->
+
+          <!--PRODUCT BOOKING FORM MOBILE BEGIN-->
+          <div class="product-attribute__mobile d-lg-none">
+            <a (click)="detCollapsed = !detCollapsed" [attr.aria-expanded]="!detCollapsed" aria-controls="collapse">
+              <span class="product-attribute__mobile_title">Details</span>
+              <i class="fas fa-chevron-down chevron" *ngIf="!detCollapsed; else chevronLeftDet"></i>
+              <ng-template #chevronLeftDet>
+                <i class="fas fa-chevron-left chevron"></i>
+              </ng-template>
+              <hr class="underline" />
+            </a>
+            <div id="details" [ngbCollapse]="detCollapsed">
+              <app-product-form
+                [submitForm]="addProduct.asObservable()"
+                [product]="selected$ | async"
+                [postfix]="'mobile'"
+                [sizes]="sizes"
+                [colors]="colors"
+                (addToCart)="addToCart($event)"
+              >
+              </app-product-form>
+            </div>
+          </div>
+          <!--PRODUCT BOOKING FORM MOBILE END-->
+        </div>
+        <!--PRODUCT BOOKING FORM END-->
+
+        <!--PRODUCT ADD TO CART DESKTOP BUTTON BEGIN-->
+        <div class="row d-none ds-lg-block d-xl-block d-lg-block">
+          <button type="button" (click)="addedToCart('desktop')" class="btn">Add to cart</button>
+        </div>
+        <!--PRODUCT ADD TO CART DESKTOP BUTTON BEGIN-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--PRODUCT ADD TO CART MOBILE BUTTON BEGIN-->
+<div class="container-fluid d-lg-none">
+  <div class="row">
+    <div class="product-footer">
+      <button type="button" (click)="addedToCart('mobile')" class="btn">Add to cart</button>
+    </div>
+  </div>
+</div>
+<!--PRODUCT ADD TO CART MOBILE BUTTON END-->

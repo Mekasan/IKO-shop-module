@@ -1,0 +1,25 @@
+.card {
+  border: none;
+}
+.attribute {
+  padding-top: 10px;
+  &__quantity input {
+    width: 90px;
+    padding-left: 8px;
+  }
+  &__quantity {
+    padding-left: 0;
+  }
+}
+select.form-control {
+  max-width: 90px;
+}
+.mobile-form {
+  width: 130px;
+  &_item {
+    justify-content: flex-end;
+    .col-form-label {
+      padding-right: 20px;
+    }
+  }
+}

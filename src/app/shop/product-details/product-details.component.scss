@@ -1,0 +1,144 @@
+:host {
+  padding-top: 40px;
+  min-height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.main-content {
+  min-height: 100%;
+}
+::ng-deep *:focus {
+  outline: none;
+}
+::ng-deep.carousel-inner :focus {
+  outline: none;
+}
+@media screen and (max-width: 411px) {
+  .col-md-12 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.carousel {
+  &-wrapper {
+    border-radius: 5px;
+    width: 390px;
+    margin: 0 auto;
+    @media screen and (max-width: 414px) {
+      width: 380px;
+    }
+    @media screen and (max-width: 375px) {
+      width: 375px;
+    }
+    @media screen and (max-width: 360px) {
+      width: 340px;
+    }
+    @media screen and (max-width: 320px) {
+      width: 300px;
+    }
+  }
+  &-image {
+    max-width: 270px;
+    height: 244px;
+    margin: 20px 60px;
+    @media screen and (max-width: 320px) {
+      margin: 20px 30px;
+    }
+  }
+  &-inner:focus {
+    outline: unset;
+  }
+  &-indicators li {
+    list-style: disc;
+  }
+}
+::ng-deep.carousel-control-prev-icon {
+  background-image: url("/assets/chevron-left.svg");
+  width: 48px;
+  height: 48px;
+}
+::ng-deep.carousel-control-next-icon {
+  background-image: url("/assets/chevron-right.svg");
+  width: 48px;
+  height: 48px;
+}
+.product {
+  &-title {
+    font-size: 24px;
+    color: #7f7f7f;
+    padding-bottom: 15px;
+    &__mobile {
+      padding-top: 25px;
+      font-size: 16px;
+    }
+  }
+  font-size: 13px;
+  @media screen and (min-width: 1200px) {
+    margin-left: 20px;
+  }
+  &-features {
+    padding-top: 20px;
+  }
+  &-description {
+    &__mobile {
+      transition: all 3s;
+      &_title {
+        color: blue;
+      }
+    }
+    width: 88%;
+    @media screen and (max-width: 992px) {
+      padding-top: 10px;
+    }
+    padding-top: 25px;
+    .card {
+      border: none;
+    }
+  }
+  .chevron {
+    width: 16px;
+    position: absolute;
+    right: 70px;
+    color: #ccc;
+  }
+  &-price {
+    padding-top: 8px;
+    &__mobile {
+      color: #c3c3c3;
+      font-size: 16px;
+    }
+  }
+  &-attribute {
+    padding-top: 10px;
+    &__mobile {
+      width: 88%;
+      &_title {
+        color: blue;
+      }
+      .card {
+        border: none;
+      }
+    }
+  }
+  &-footer {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #005fb8;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+}
+.btn {
+  text-transform: uppercase;
+  &:hover {
+    background-color: #fda425;
+  }
+  background-color: #ff6601;
+  color: white;
+  font-size: 13px;
+  font-weight: 100;
+}

@@ -2,6 +2,10 @@
  * Global application theme.
  * Framework overrides and customization goes here.
  */
+html,
+body {
+  height: 100%;
+}
 body {
   font-family: "Open_Sans_Custom_Regular", sans-serif;
 }
