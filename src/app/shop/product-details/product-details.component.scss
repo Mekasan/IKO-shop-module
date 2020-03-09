@@ -96,6 +96,15 @@
       border: none;
     }
   }
+  &-related {
+    hr {
+      margin-bottom: 30px;
+    }
+    &_title {
+      color: blue;
+    }
+    width: 88%;
+  }
   .chevron {
     width: 16px;
     position: absolute;

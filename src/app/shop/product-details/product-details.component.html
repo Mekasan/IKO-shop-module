@@ -111,6 +111,14 @@
         </div>
         <!--PRODUCT BOOKING FORM END-->
 
+        <!--PRODUCT RELATED BEGIN-->
+        <div class="product-related d-lg-none">
+          <span class="product-related_title">Related Products</span>
+          <hr class="underline" />
+        </div>
+        <app-product-related [product]="product" class="d-lg-none"> </app-product-related>
+        <!--PRODUCT RELATED END-->
+
         <!--PRODUCT ADD TO CART DESKTOP BUTTON BEGIN-->
         <div class="row d-none ds-lg-block d-xl-block d-lg-block">
           <button type="button" (click)="addedToCart('desktop')" class="btn">Add to cart</button>

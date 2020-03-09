@@ -8,9 +8,17 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { NgbCarouselModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ProductFormComponent } from './product-form/product-form.component';
+import { ProductRelatedComponent } from './product-related/product-related.component';
 
 @NgModule({
-  declarations: [ShopComponent, ProductsListComponent, ProductComponent, ProductDetailsComponent, ProductFormComponent],
+  declarations: [
+    ShopComponent,
+    ProductsListComponent,
+    ProductComponent,
+    ProductDetailsComponent,
+    ProductFormComponent,
+    ProductRelatedComponent
+  ],
   imports: [CommonModule, ShopRoutingModule, NgbCarouselModule, ReactiveFormsModule, NgbCollapseModule]
 })
 export class ShopModule {}
