@@ -1,5 +1,5 @@
 <div class="product card shadow" *ngFor="let product of related$ | async">
-  <a [routerLink]="['/product', product.id]">
+  <a [routerLink]="['/shop/product', product.id]">
     <div class="product-wrapper">
       <img src="{{ product.image[0] }}" class="card-img-top product-image img-fluid" alt="" />
       <div class="card-body product-body">
