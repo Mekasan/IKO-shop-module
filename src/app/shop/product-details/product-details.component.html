@@ -3,7 +3,8 @@
   <div class="row">
     <!-- PRODUCT IMAGE CAROUSEL BEGIN-->
     <div class="col-lg-4 col-md-12">
-      <div class="carousel-wrapper shadow">
+      <!--suppress AngularUndefinedBinding -->
+      <div class="carousel-wrapper shadow" (swipeleft)="prev()" (swiperight)="next()">
         <ngb-carousel
           #carousel
           [showNavigationArrows]="showNavigationArrows"

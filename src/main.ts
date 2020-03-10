@@ -11,6 +11,7 @@ import { AppModule } from '@app/app.module';
 import { environment } from '@env/environment';
 import { hmrBootstrap } from './hmr';
 
+import 'hammerjs';
 if (environment.production) {
   enableProdMode();
 }

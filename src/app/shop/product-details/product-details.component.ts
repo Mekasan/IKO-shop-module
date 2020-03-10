@@ -67,4 +67,10 @@ export class ProductDetailsComponent implements OnInit, AfterViewChecked, OnDest
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+  prev() {
+    this.carousel.prev();
+  }
+  next() {
+    this.carousel.next();
+  }
 }
