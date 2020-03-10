@@ -1,16 +1,31 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="https://github.com/ngx-rocket" translate>APP_NAME</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      aria-controls="navbar-menu"
-      aria-label="Toggle navigation"
-      (click)="toggleMenu()"
-      [attr.aria-expanded]="!menuHidden"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+    <a class="navbar-brand" routerLink="/" *ngIf="HeaderTitle !== 'product'; else back">
+      <img class="logo" src="/assets/iko-logo-clean-white.svg" alt="" />
+    </a>
+    <ng-template #back>
+      <a class="navbar-brand" routerLink="/shop">
+        <i class="fas fa-chevron-left chevron"></i>
+      </a>
+    </ng-template>
+
+    <div class="header-title" *ngIf="HeaderTitle">
+      {{ HeaderTitle }}
+    </div>
+    <app-cart [cart]="cart" *ngIf="cart$ | async as cart; else menu"> </app-cart>
+    <ng-template #menu>
+      <button
+        class="navbar-toggler"
+        type="button"
+        aria-controls="navbar-menu"
+        aria-label="Toggle navigation"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="!menuHidden"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </ng-template>
+
     <div id="navbar-menu" class="collapse navbar-collapse float-xs-none" [ngbCollapse]="menuHidden">
       <div class="navbar-nav">
         <a class="nav-item nav-link text-uppercase" routerLink="/home" routerLinkActive="active">
