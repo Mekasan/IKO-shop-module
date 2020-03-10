@@ -56,7 +56,13 @@ export class ProductDetailsComponent implements OnInit, AfterViewChecked, OnDest
     this.addProduct.next(value);
   }
   addToCart(event: any) {
-    console.log('event', event);
+    const value = this.store.value.shopCart;
+    if (value && value.length) {
+      value.push(event);
+      this.store.set('shopCart', value);
+    } else {
+      this.store.set('shopCart', [event]);
+    }
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();

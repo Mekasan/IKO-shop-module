@@ -1,14 +1,17 @@
 import { pluck, distinctUntilChanged } from 'rxjs/operators';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { Product } from '@app/models/product';
+import { ShopCart } from '@app/models/shop-cart';
 
 export interface State {
   products: Product[];
+  shopCart: ShopCart[];
   [key: string]: any;
 }
 
 const state: State = {
-  products: undefined
+  products: undefined,
+  shopCart: undefined
 };
 
 export class Store {
