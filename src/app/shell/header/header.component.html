@@ -12,7 +12,7 @@
     <div class="header-title" *ngIf="HeaderTitle">
       {{ HeaderTitle }}
     </div>
-    <app-cart [cart]="cart" *ngIf="cart$ | async as cart; else menu"> </app-cart>
+
     <ng-template #menu>
       <button
         class="navbar-toggler"
@@ -60,5 +60,6 @@
         </div>
       </div>
     </div>
+    <app-cart [cart]="cart" *ngIf="cart$ | async as cart; else menu"> </app-cart>
   </nav>
 </header>
